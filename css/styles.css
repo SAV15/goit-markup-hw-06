@@ -464,6 +464,15 @@ header {
     border-radius: 50%;
     fill: inherit;
     cursor: pointer;
+
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close:focus,
+.modal-close:hover{
+    fill: var(--blue-color);
 }
 
 .modal-title{
@@ -551,23 +560,54 @@ header {
 }
 
 .agreement-place{
-    display: flex;
     gap: 8.38px;
+    margin-bottom: 30px;
+}
+
+.agree{
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 30px;
+}
+
+.checkbox{
+    appearance: none;
+}
+
+.checkbox:checked + .checkbox-icon {
+    background-color: var(--blue-color);
+    background-image: url(../images/icon\ check.svg);
+    background-size: contain;
+    background-origin:border-box;
+    border: 2px solid var(--blue-color);
+}
+
+.checkbox-icon{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    fill: black;
+    
+    border: 2px solid rgba(21,21,21,1);
+    border-radius: 2px;
+
+    margin-right: 7px;
+}
+
+.checkbox-icon svg{
+    fill: white;
 }
 
 .agreement-place > .agree{
     font-weight: 400;
     font-size: 14px;
-    line-height: 1.71;
     letter-spacing: 0.03em;
     color: #757575;
 }
 
 .terms{
     color: var(--blue-color);
+    margin-left: 4px;
 }
 
 .modal-button{
@@ -582,6 +622,16 @@ header {
     line-height: 1.5;
     cursor: pointer;
     font-family: inherit;
+    box-shadow: none;
+
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-button:focus,
+.modal-button:hover{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* END OF INDEX`S MAIN */
